@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/students/layout :: css">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>DETAIL</h1>
+<form method="post" th:action="@{/students/detail/{id}/(id=${student.id})}">
+    <table border="1">
+        <tr>
+            <th>NAME</th>
+            <th>ADDRESS</th>
+            <th>AGE</th>
+        </tr>
+        <tr>
+            <td><input th:value="${student.name}" type="text" name="name"></td>
+            <td><input th:value="${student.address}" type="text" name="address"></td>
+            <td><input th:value="${student.age}" type="text" name="age"></td>
+        </tr>
+    </table>
+    <button type="submit">Edit</button>
+</form>
+</body>
+</html>
